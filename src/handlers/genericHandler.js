@@ -1,4 +1,4 @@
-const genericHandler = ({ blFunction, res, req, httpCode = 200, next }) => {
+const genericHandler = ({ blFunction, res, httpCode = 200, next }) => {
   return async (...args) => {
     try {
       const result = await blFunction(...args);

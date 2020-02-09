@@ -8,17 +8,7 @@
   "scripts": {
     "start": "babel-node src/index.js",
     "build": "babel src -d dist",
-    "serve": "node --expose-gc dist/index.js",
     "test": "ENV=test jest --no-cache",
-    "test:debug": "npm test -- --debug",
-    "test:watch": "npm test -- --watch",
-    "test:coverage": "npm test -- --coverage",
-    "test:coverwatch": "npm test -- --watch --coverage",
-    "test:current": "npm test -- -o",
-    "test:domain": "npm test -- -t",
-    "release:major": "npm version major",
-    "release:minor": "npm version minor",
-    "release:patch": "npm version patch",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
   },
@@ -35,14 +25,10 @@
     "jest": "25.1.0"
   },
   "dependencies": {
-    "@hapi/joi": "15.1.1",
     "body-parser": "1.19.0",
     "core-js": "3.6.4",
     "dayjs": "1.8.20",
     "express": "4.17.1",
-    "morgan": "1.9.1",
-    "regenerator-runtime": "0.13.3",
-    "superagent": "5.2.1",
-    "uuid-v4": "0.1.0"
-    }
+    "superagent": "5.2.1"
+  }
 }
