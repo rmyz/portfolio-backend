@@ -1,3 +1,3 @@
-const { GITHUB_API_KEY: githubApiKey } = process.env;
+const { GITHUB_API_KEY: githubApiKey, GITHUB_API_URL: githubApiUrl } = process.env;
 
-export { githubApiKey };
+export { githubApiKey, githubApiUrl };

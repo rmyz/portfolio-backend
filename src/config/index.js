@@ -1,5 +1,5 @@
 import { port } from './server';
-import { githubApiKey } from './github';
+import { githubApiKey, githubApiUrl } from './github';
 import { linkedinUser, linkedinPass, linkedinUrl } from './linkedin';
 
-export { port, githubApiKey, linkedinUser, linkedinPass, linkedinUrl };
+export { port, githubApiKey, githubApiUrl, linkedinUser, linkedinPass, linkedinUrl };
