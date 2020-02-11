@@ -1,11 +1,13 @@
-import scrapedin from 'scrapedin';
-import { linkedinUser, linkedinPass, linkedinUrl } from '../config';
+import { firebaseCollection, firebaseDoc } from '../config';
+import firebase from '../infra/firebase';
 
 const blGetLinkedinInfo = async () => {
-  const profileScrapper = await scrapedin({ email: linkedinUser, password: linkedinPass });
-  const profile = await profileScrapper(linkedinUrl);
+  const profile = await firebase
+    .collection(firebaseCollection)
+    .doc(firebaseDoc)
+    .get();
 
-  return profile;
+  return profile.data();
 };
 
 export default blGetLinkedinInfo;
