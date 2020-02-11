@@ -1,5 +1,5 @@
-import serverConfig from './server';
-import githubConfig from './github';
-import linkedinConfig from './linkedin';
+import { port } from './server';
+import { githubApiKey } from './github';
+import { linkedinUser, linkedinPass, linkedinUrl } from './linkedin';
 
-export { serverConfig, githubConfig, linkedinConfig };
+export { port, githubApiKey, linkedinUser, linkedinPass, linkedinUrl };
