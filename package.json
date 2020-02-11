@@ -6,8 +6,9 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "start": "babel-node src/index.js",
+    "start": "babel-node -r dotenv/config src/index.js",
     "build": "babel src -d dist",
+    "serve": "node -r dotenv/config dist/index.js",
     "test": "ENV=test jest --no-cache",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
@@ -26,9 +27,10 @@
   },
   "dependencies": {
     "body-parser": "1.19.0",
-    "core-js": "3.6.4",
     "dayjs": "1.8.20",
+    "dotenv": "8.2.0",
     "express": "4.17.1",
+    "scrapedin": "^1.0.11",
     "superagent": "5.2.1"
   }
 }
