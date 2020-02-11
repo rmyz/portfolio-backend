@@ -2,15 +2,14 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import routes from './routes';
-import { serverConfig } from './config';
+import { port } from './config';
 
-const { port } = serverConfig;
 const app = express();
 
 app.use(bodyParser.json());
 
 Object.keys(routes).forEach(key => {
-  app.use(`/${key}`, routes[key]);
+  app.use(`${key}`, routes[key]);
 });
 
 app.get('/', (req, res) => {
@@ -31,8 +30,9 @@ app.use((err, req, res, next) => {
 
 const start = async () => {
   app.listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log('Starting API Rest');
   });
 };
 
-export { start, app };
+export { start };
