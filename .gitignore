@@ -20,3 +20,5 @@ coverage
 
 # Other
 .DS_Store
+
+.env
