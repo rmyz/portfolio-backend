@@ -1,4 +1,4 @@
-import scrapedin from 'scrapedin';
+import scrapedin from 'scrapedin-browserless';
 
 import { linkedinUser, linkedinPass, linkedinUrl, firebaseCollection, firebaseDoc } from '../config';
 import firebase from '../infra/firebase';
