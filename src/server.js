@@ -21,6 +21,8 @@ app.get('/ping', (req, res) => {
 });
 
 app.use((err, req, res, next) => {
+  // eslint-disable-next-line no-console
+  console.log('There has been an error: ', err);
   const { httpCode = 500, message = '' } = err;
 
   res.status(httpCode).json({ error: message || err });
