@@ -22,13 +22,13 @@ const credential = {
   type: FIREBASE_CONFIG_TYPE,
   project_id: FIREBASE_PROJECT_ID,
   private_key_id: FIREBASE_CONFIG_PRIVATE_KEY_ID,
-  private_key: FIREBASE_CONFIG_PRIVATE_KEY,
+  private_key: FIREBASE_CONFIG_PRIVATE_KEY.replace(/\\n/g, '\n'),
   client_email: FIREBASE_CONFIG_EMAIL,
   client_id: FIREBASE_CONFIG_ID,
   auth_uri: FIREBASE_CONFIG_AUTH_URI,
   token_uri: FIREBASE_CONFIG_TOKEN_URI,
   auth_provider_x509_cert_url: FIREBASE_CONFIG_AUTH_PROVIDER,
   client_x509_cert_url: FIREBASE_CONFIG_CLIENT,
-};
+}
 
 export { FIREBASE_COLLECTION as firebaseCollection, FIREBASE_DOC as firebaseDoc, credential };
