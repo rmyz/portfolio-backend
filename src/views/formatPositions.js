@@ -5,9 +5,7 @@ const _formatDescriptions = descriptions => {
 
   const descriptionToReturn = descriptionsArray.slice(1).map(item => item.replace('- ', ''));
 
-  if (descriptionToReturn.includes('…')) {
-    descriptionToReturn.pop();
-  }
+  descriptionToReturn.pop();
 
   return descriptionToReturn;
 };
@@ -17,9 +15,9 @@ const formatPositions = ({ positions }) => {
     const { description } = position;
 
     const newDescription = description.split('·');
-    const methodologies = newDescription[0];
-    const backend = newDescription[1];
-    const frontend = newDescription[2];
+    const methodologies = newDescription[1];
+    const backend = newDescription[2];
+    const frontend = newDescription[3];
 
     const formattedMethodologies = _formatDescriptions(methodologies);
     const formattedBackend = _formatDescriptions(backend);
