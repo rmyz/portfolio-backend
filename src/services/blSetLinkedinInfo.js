@@ -2,7 +2,7 @@ import scrapedin from 'scrapedin-browserless';
 
 import { linkedinUser, linkedinPass, linkedinUrl, firebaseCollection, firebaseDoc } from '../config';
 import firebase from '../infra/firebase';
-import formatProfile from './formatProfile';
+import formatProfile from '../views/formatProfile';
 
 const blSetLinkedinInfo = async () => {
   const profileScrapper = await scrapedin({ email: linkedinUser, password: linkedinPass });

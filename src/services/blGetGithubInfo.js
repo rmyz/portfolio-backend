@@ -1,30 +1,39 @@
 import request from 'superagent';
+
 import { githubApiKey, githubApiUrl } from '../config';
+import formatGithubInfo from '../views/formatGithubInfo';
 
 const blGetGithubInfo = async () => {
   const query = ` 
-    query {
-      viewer {
-        pinnedItems(first: 6) {
-          nodes {
-            ... on Repository {
-              id
+  query {
+    viewer {
+      repositories(first: 20, orderBy: {field: UPDATED_AT, direction: DESC}, ownerAffiliations: [OWNER], privacy: PUBLIC) {
+        nodes {
+          ... on Repository {
+            name
+            description
+            url
+            isFork
+            primaryLanguage {
               name
-              description
-              url
             }
+            stargazers {
+              totalCount
+            }
+            updatedAt
           }
         }
       }
-    }`;
+    }
+  }`;
 
-  const { body: result } = await request
+  const { body } = await request
     .post(githubApiUrl)
     .set('Authorization', `bearer ${githubApiKey}`)
     .set('User-Agent', 'request')
     .send(JSON.stringify({ query }));
 
-  return result;
+  return formatGithubInfo(body);
 };
 
 export default blGetGithubInfo;
