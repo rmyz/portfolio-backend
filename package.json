@@ -6,9 +6,9 @@
   "main": "index.js",
   "license": "ISC",
   "scripts": {
-    "start": "nodemon --exec babel-node -r dotenv/config src/index.js",
+    "dev": "nodemon --exec babel-node -r dotenv/config src/index.js",
     "build": "babel src -d dist",
-    "serve": "node -r dotenv/config dist/index.js",
+    "start": "node -r dotenv/config dist/index.js",
     "test": "ENV=test jest --no-cache",
     "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix"
