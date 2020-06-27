@@ -33,7 +33,7 @@
     "express": "4.17.1",
     "firebase-admin": "8.12.1",
     "puppeteer": "4.0.1",
-    "scrapedin-browserless": "2.1.0",
+    "scrapedin-browserless": "2.1.1",
     "superagent": "5.2.2"
   }
 }
