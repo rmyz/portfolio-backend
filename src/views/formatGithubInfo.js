@@ -9,9 +9,11 @@ const formatGithubInfo = githubInfo => {
 
   const formattedInfo = nodes.map(node => {
     const {
-      primaryLanguage: { name },
+      primaryLanguage,
       stargazers: { totalCount },
     } = node;
+
+    const { name = '' } = primaryLanguage || {};
 
     return { ...node, primaryLanguage: name, stargazers: totalCount };
   });
