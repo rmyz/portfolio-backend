@@ -14,6 +14,13 @@ const formatPositions = ({ positions }) => {
   return positions.map(position => {
     const { description } = position;
 
+    if (!description) {
+      return {
+        ...position,
+        description: { methodologies: [], backend: [], frontend: [] },
+      };
+    }
+
     const newDescription = description.split('·');
     const methodologies = newDescription[1];
     const backend = newDescription[2];
